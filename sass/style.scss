@@ -1,0 +1,27 @@
+$vermelho: red;
+$tamanho: 16px;
+
+@mixin tamanho($fs) {
+    font-size: $tamanho;
+    color: red;
+    font-style: italic;
+}
+
+@mixin dias($tamanho_inicial) {  
+    @include tamanho($tamanho_inicial)   
+}
+
+main {
+    article {
+    @include dias($tamanho);
+   } 
+}
+
+@for $i from 1 through 3 {
+    .day#{$i}-forecast {
+        background-color: blue;
+        font-size: $tamanho + 8px;
+    }  
+} 
+
+
